@@ -1,16 +1,17 @@
+import Details from "./Details";
 export default function Main() {
   return (
-    <div className="w-[1216px] h-[797px]  m-8  ">
+    <div className="w-[1216px] h-[797px]  m-8 flex flex-col  ">
       <section className="flex gap-4 items-center justify-center m-2">
         <input
           type="text"
           placeholder="Search for a place..."
-          className=" text-white border-none w-[50%] rounded-md pl-8  px-2 py-1 bg-[url('../icon-search.svg')]
+          className=" text-white border-none w-[50%] rounded-md pl-8  px-2 py-2 bg-[url('../icon-search.svg')]
            bg-no-repeat bg-[left_0.5rem_center] bg-gray-700"
         />
         <button
           type="submit"
-          className="border-none rounded-md text-white px-2 py-1 bg-blue-700"
+          className="border-none rounded-md text-white px-2 py-2 bg-blue-700"
         >
           Search
         </button>
@@ -19,7 +20,7 @@ export default function Main() {
         <div className="w-[700px] h-[286px] relative mt-6 ">
           <img
             src="../bg-today-large.svg"
-            alt=""
+            alt="Weather-today-image"
             className=" w-[700px] h-[286px] "
           />
           <div className="flex items-center gap-10 justify-center">
@@ -29,7 +30,11 @@ export default function Main() {
                 <p>Tuesday, August, 2025</p>
               </section>
               <div className=" flex items-center absolute right-8 top-16">
-                <img src="../icon-sunny.webp" alt="" className=" w-[100px] " />
+                <img
+                  src="../icon-sunny.webp"
+                  alt="Sunny-icon"
+                  className=" w-[100px] "
+                />
                 <section className="text-white">
                   <p className="font-italic text-7xl font-semibold italic text-yellow-500">
                     20<sup>o</sup>
@@ -40,6 +45,7 @@ export default function Main() {
           </div>
         </div>
       </div>
+      <Details />
     </div>
   );
 }
