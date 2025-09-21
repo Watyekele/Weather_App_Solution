@@ -20,7 +20,7 @@ export default function DesktopMetric() {
             <img
               src="../icon-dropdown.svg"
               alt="drop-down-icon"
-              className="h-4 w-2 sm:w-4   "
+              className="h-4 w-4 sm:w-4   "
             />
           </section>
         </header>
