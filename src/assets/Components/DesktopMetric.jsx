@@ -3,24 +3,24 @@ import HourlyForecast from "./HourlyForecast";
 
 export default function DesktopMetric() {
   return (
-    <div className="min-h-screen flex items-start justify-center bg-[rgb(2,1,45)] lg:p-6">
+    <div className="min-h-screen min-w-full flex items-start justify-center bg-[rgb(2,1,45)] lg:p-6">
       {/* Wrapper */}
       <div className="w-full max-w-[1216px] flex flex-col items-center gap-8 mt-4 px-4">
         {/* Header Section */}
-        <header className="w-full flex items-center justify-between p-2 mt-8 ">
+        <header className="w-full flex items-center justify-between flex-shrink p-2 mt-8  ">
           <img
             src="../logo.svg"
             alt="Weather-now-icon"
-            className="h-8 sm:h-10 lg:mx-8 "
+            className="h-8 sm:h-10 lg:mx-8 w-30 sm:w-50  "
           />
 
-          <section className="flex items-center gap-2 px-2 py-1 bg-gray-700 rounded-md">
-            <img src="../icon-units.svg" alt="" className="h-5 w-5" />
+          <section className="flex items-center justify-evenly  px-2 sm:py-2 py-1 bg-gray-700 gap-2 w-24 sm:w-30  rounded-md">
+            <img src="../icon-units.svg" alt="units-icon" className="h-5 w-5" />
             <p className="text-white text-sm sm:text-lg">Units</p>
             <img
               src="../icon-dropdown.svg"
               alt="drop-down-icon"
-              className="h-4 w-4 "
+              className="h-4 w-4  "
             />
           </section>
         </header>

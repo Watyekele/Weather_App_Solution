@@ -9,11 +9,11 @@ export default function Main() {
         <img
           src="../bg-today-large.svg"
           alt="Weather-today-image"
-          className="w-full h-full object-cover"
+          className="w-full sm:w-full h-full object-cover"
         />
 
         {/* Location + Date */}
-        <section className="absolute left-4 sm:left-8 top-16 sm:top-24 text-white text-sm sm:text-lg md:text-xl">
+        <section className="absolute left-2 sm:left-8 top-16 sm:top-24 text-white text-xs sm:text-lg md:text-xl">
           <p>Berlin, Germany</p>
           <p>Tuesday, August, 2025</p>
         </section>
@@ -23,10 +23,10 @@ export default function Main() {
           <img
             src="../icon-sunny.webp"
             alt="Sunny-icon"
-            className="w-[60px] sm:w-[80px] md:w-[100px]"
+            className="w-[40px] sm:w-[80px] md:w-[100px]"
           />
           <section className="text-white">
-            <p className="italic font-semibold text-5xl sm:text-6xl md:text-7xl">
+            <p className="italic font-semibold text-3xl sm:text-6xl md:text-7xl">
               20°
             </p>
           </section>
