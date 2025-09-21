@@ -11,16 +11,16 @@ export default function DesktopMetric() {
           <img
             src="../logo.svg"
             alt="Weather-now-icon"
-            className="h-8 sm:h-10 lg:mx-8 w-30 sm:w-50  "
+            className="h-8 sm:h-10 lg:mx-8 w-35 sm:w-50  "
           />
 
-          <section className="flex items-center justify-evenly  px-2 sm:py-2 py-1 bg-gray-700 gap-2 w-24 sm:w-30  rounded-md">
+          <section className="flex items-center justify-evenly  px-2 sm:py-2 py-1 bg-gray-700 gap-1 w-24 sm:w-30  rounded-md">
             <img src="../icon-units.svg" alt="units-icon" className="h-5 w-5" />
-            <p className="text-white text-sm sm:text-lg">Units</p>
+            <p className="text-white text-xs sm:text-lg">Units</p>
             <img
               src="../icon-dropdown.svg"
               alt="drop-down-icon"
-              className="h-4 w-4  "
+              className="h-4 w-2 sm:w-4   "
             />
           </section>
         </header>
