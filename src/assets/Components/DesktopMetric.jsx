@@ -33,11 +33,11 @@ export default function DesktopMetric() {
         </section>
 
         {/* Search Section */}
-        <section className="w-full flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <section className="w-full max-w-[680px] flex flex-col sm:flex-row gap-4 items-center justify-center">
           <input
             type="text"
             placeholder="Search for a place..."
-            className="w-full sm:w-[60%] text-white rounded-md pl-8 px-2
+            className="w-full  sm:w-[60%] text-white rounded-md pl-8 px-2
              py-2  bg-[url('../icon-search.svg')] bg-no-repeat bg-[left_0.5rem_center] bg-gray-700"
           />
           <button
@@ -49,7 +49,7 @@ export default function DesktopMetric() {
         </section>
 
         {/* Main Content */}
-        <section className="w-full flex flex-col lg:flex-row items-start gap-2">
+        <section className="w-full flex flex-col lg:flex-row items-center justify-center gap-4">
           <Main />
           <HourlyForecast />
         </section>

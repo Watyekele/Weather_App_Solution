@@ -3,9 +3,9 @@ import Forecast from "./Forecast";
 
 export default function Main() {
   return (
-    <div className="w-full flex flex-col items-center px-4 sm:px-6 lg:px-12 min-h-[600px]">
+    <div className="w-full  flex flex-col items-center px-4 sm:px-6 lg:px-12 ">
       {/* Weather Card */}
-      <div className="w-full max-w-[700px] h-[200px] sm:h-[250px] md:h-[286px] relative rounded-xl overflow-hidden">
+      <div className="w-full max-w-[650px] h-[200px] sm:h-[250px] md:h-[286px] relative rounded-xl overflow-hidden">
         <img
           src="../bg-today-large.svg"
           alt="Weather-today-image"
@@ -14,7 +14,7 @@ export default function Main() {
 
         {/* Location + Date */}
         <section className="absolute left-2 sm:left-8 top-16 sm:top-24 text-white text-xs sm:text-lg md:text-xl">
-          <p>Berlin, Germany</p>
+          <p className="font-bold text-xl ml-2 sm:text-2xl">Berlin, Germany</p>
           <p>Tuesday, August, 2025</p>
         </section>
 
@@ -23,10 +23,10 @@ export default function Main() {
           <img
             src="../icon-sunny.webp"
             alt="Sunny-icon"
-            className="w-[40px] sm:w-[80px] md:w-[100px]"
+            className="w-[60px] sm:w-[80px] md:w-[100px]"
           />
           <section className="text-white">
-            <p className="italic font-semibold text-3xl sm:text-6xl md:text-7xl">
+            <p className="italic font-semibold text-7xl sm:text-6xl md:text-7xl">
               20°
             </p>
           </section>

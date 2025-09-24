@@ -11,8 +11,8 @@ export default function HourlyForecast() {
   ];
 
   return (
-    <div className=" flex w-full md:w-full  lg:w-[50%]  mb-4  justify-center">
-      <div className="  w-full  max-w-[700px]   h-[620px]  bg-gray-800 rounded-xl p-4 text-white flex flex-col gap-4 ">
+    <div className=" flex w-full md:w-full  lg:w-[50%]  mb-4 justify-center">
+      <div className="  w-full  max-w-[700px]   bg-gray-800 rounded-xl p-4 text-white flex flex-col gap-6 ">
         {/* Header */}
         <div className="flex justify-between items-center">
           <h2 className="text-base sm:text-lg font-semibold">
