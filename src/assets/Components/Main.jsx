@@ -19,11 +19,11 @@ export default function Main() {
         </section>
 
         {/* Icon + Temperature */}
-        <div className="absolute right-4 sm:right-8 top-10 sm:top-16 flex items-center gap-4 sm:gap-8">
+        <div className="absolute right-4 sm:right-8 top-10 sm:top-16 flex items-center gap-2 sm:gap-8">
           <img
             src="../icon-sunny.webp"
             alt="Sunny-icon"
-            className="w-[60px] sm:w-[80px] md:w-[100px]"
+            className="w-[40px] sm:w-[80px] md:w-[100px]"
           />
           <section className="text-white">
             <p className="italic font-semibold text-3xl sm:text-6xl md:text-7xl">
