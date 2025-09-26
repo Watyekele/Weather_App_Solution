@@ -14,7 +14,7 @@ export default function Main() {
 
         {/* Location + Date */}
         <section className="absolute left-2 sm:left-8 top-16 sm:top-24 text-white text-xs sm:text-lg md:text-xl">
-          <p className="font-bold text-xl ml-2 sm:text-2xl">Berlin, Germany</p>
+          <p className="font-bold text-lg ml-2 sm:text-2xl">Berlin, Germany</p>
           <p>Tuesday, August, 2025</p>
         </section>
 
@@ -26,7 +26,7 @@ export default function Main() {
             className="w-[60px] sm:w-[80px] md:w-[100px]"
           />
           <section className="text-white">
-            <p className="italic font-semibold text-7xl sm:text-6xl md:text-7xl">
+            <p className="italic font-semibold text-3xl sm:text-6xl md:text-7xl">
               20°
             </p>
           </section>
