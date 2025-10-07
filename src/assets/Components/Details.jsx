@@ -1,11 +1,12 @@
-export default function Details() {
+export default function Details({ units }) {
   const Detailsinfo = [
     { id: "1", statement: "Feels like", weather: "18°" },
     { id: "2", statement: "Humidity", weather: "46%" },
     { id: "3", statement: "Wind", weather: "14km/h" },
     { id: "4", statement: "Precipitation", weather: "0mm" },
   ];
-
+  const temp = units === "metric" ? "18°C" : "64°F";
+  const wind = units === "metric" ? "14 km/h" : "9 mph";
   return (
     <div
       className="
@@ -15,15 +16,20 @@ export default function Details() {
         md:grid-cols-3     /* 3 columns on medium screens */
         lg:grid-cols-4     /* 4 columns on large screens */
         gap-4
-        w-full mt-4
+        w-full
+        max-w-[1216px]
+        h-full
+        mt-4
+        px-4 sm:px-2 lg:px-4
+        mx-auto
       "
     >
       {Detailsinfo.map((detail) => (
         <article
           key={detail.id}
-          className="text-white p-4 h-34 
-          flex flex-col justify-between items-center
-          rounded-md bg-gray-800"
+          className="text-white p-4  sm:p-4 h-34 
+          flex flex-col  justify-between items-center
+          rounded-md bg-gray-800 "
         >
           <p className="text-xl">{detail.statement}</p>
           <p className="text-2xl">{detail.weather}</p>

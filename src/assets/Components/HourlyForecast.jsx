@@ -11,8 +11,8 @@ export default function HourlyForecast() {
   ];
 
   return (
-    <div className=" flex w-full md:w-full  lg:w-[50%]  mb-4 justify-center">
-      <div className="  w-full  max-w-[700px]   bg-gray-800 rounded-xl p-4 text-white flex flex-col gap-6 ">
+    <div className="flex w-full lg:flex-1 justify-center mb-2">
+      <div className="w-full max-w-[500px] bg-gray-800 rounded-xl p-4 text-white flex flex-col gap-6">
         {/* Header */}
         <div className="flex justify-between items-center">
           <h2 className="text-base sm:text-lg font-semibold">
@@ -24,15 +24,13 @@ export default function HourlyForecast() {
         </div>
 
         {/* List */}
-        <div className="flex flex-col  gap-2 ">
+        <div className="flex flex-col justify-evenly gap-2 flex-1 h-full">
           {hours.map((hour, i) => (
             <div
               key={i}
-              className="flex justify-between items-center  
-               h-[60px]  bg-gray-700 rounded-lg px-3 sm:px-2 py-2"
+              className="flex justify-between items-center h-[60px] bg-gray-700 rounded-lg px-3  sm:px-2 py-2"
             >
-              {/* Time + icon */}
-              <div className="flex items-center  gap-2 ">
+              <div className="flex items-center gap-2">
                 <img src={hour.icon} alt="icon" className="w-6 h-6" />
                 <p className="text-md">{hour.time}</p>
               </div>
