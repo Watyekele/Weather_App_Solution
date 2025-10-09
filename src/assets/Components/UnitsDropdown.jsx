@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 export default function UnitsDropdown() {
   const [open, setOpen] = useState(false);
@@ -10,35 +9,61 @@ export default function UnitsDropdown() {
     precipitation: "Millimeters (mm)",
   });
 
+  const dropdownRef = useRef(null); // reference for detecting outside clicks
+
   const toggleDropdown = () => setOpen(!open);
 
   const handleSelect = (key, value) => {
     setSettings({ ...settings, [key]: value });
   };
 
+  // 🟢 Close dropdown when clicking outside (desktop or mobile)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside); // for mobile
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative inline-block text-left">
-      {/* Units Button (stays the same UI) */}
+    <div ref={dropdownRef} className="relative inline-block text-left">
+      {/* 🔘 Units Button */}
       <button
         onClick={toggleDropdown}
-        className="flex items-center gap-2 bg-purple-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-purple-700 transition max-w-[100px]"
+        className="flex items-center gap-1 sm:gap-2 bg-gray-700 text-white 
+                   px-2 sm:px-3 py-2 rounded-lg shadow-md hover:bg-gray-600 
+                   transition min-w-[60px] sm:min-w-[80px]"
       >
-        Units ({system === "metric" ? "Metric" : "Imperial"})
-        <ChevronDown size={18} />
+        <img src="../icon-units.svg" className="w-4 sm:w-5" alt="" />
+        Units
+        <img src="../icon-dropdown.svg" alt="" className="w-3 sm:w-4" />
       </button>
 
-      {/* Dropdown */}
+      {/* 🟣 Dropdown Menu */}
       {open && (
-        <div className="absolute mt-2 w-64 bg-[#1E1E2F] text-white rounded-xl shadow-lg border border-purple-600 z-50">
-          <div className="p-4">
+        <div
+          className="absolute mt-2 w-60 sm:w-64 bg-[#1E1E2F] text-white 
+                     rounded-xl shadow-lg border border-purple-600 z-50 
+                     max-h-[80vh] overflow-y-auto"
+        >
+          <div className="p-3 sm:p-4 text-sm sm:text-base">
             {/* Switch Mode */}
-            <p className="font-semibold mb-3">
+            <p className="font-semibold mb-3 text-center sm:text-left">
               Switch to {system === "metric" ? "Imperial" : "Metric"}
             </p>
 
             {/* Temperature */}
             <div className="mb-3">
-              <p className="text-sm text-gray-400">Temperature</p>
+              <p className="text-xs sm:text-sm text-gray-400">Temperature</p>
               <div
                 onClick={() => handleSelect("temperature", "Celsius (°C)")}
                 className={`p-2 rounded-md cursor-pointer ${
@@ -63,7 +88,7 @@ export default function UnitsDropdown() {
 
             {/* Wind Speed */}
             <div className="mb-3">
-              <p className="text-sm text-gray-400">Wind Speed</p>
+              <p className="text-xs sm:text-sm text-gray-400">Wind Speed</p>
               <div
                 onClick={() => handleSelect("wind", "km/h")}
                 className={`p-2 rounded-md cursor-pointer ${
@@ -88,7 +113,7 @@ export default function UnitsDropdown() {
 
             {/* Precipitation */}
             <div>
-              <p className="text-sm text-gray-400">Precipitation</p>
+              <p className="text-xs sm:text-sm text-gray-400">Precipitation</p>
               <div
                 onClick={() =>
                   handleSelect("precipitation", "Millimeters (mm)")

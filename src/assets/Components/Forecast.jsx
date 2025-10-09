@@ -10,15 +10,15 @@ export default function Forecast() {
                  transition-transform duration-300 hover:scale-105 min-w-[80px] "
     >
       {/* Day */}
-      <p className="text-sm sm:text-base">{Data.day}</p>
+      <p className="text-xl sm:text-base">{Data.day}</p>
 
       {/* Weather icon */}
       <img src={Data.img} alt="" className="w-10 sm:w-12 md:w-14 my-2" />
 
       {/* Temperatures evenly spaced */}
       <article className="flex justify-between w-full gap-4 min-w-20 p-2">
-        <p className="text-sm sm:text-base">{Data.Tempmorning}</p>
-        <p className="text-sm sm:text-base">{Data.Tempevening}</p>
+        <p className="text-md sm:text-base">{Data.Tempmorning}</p>
+        <p className="text-md sm:text-base">{Data.Tempevening}</p>
       </article>
     </div>
   ));
